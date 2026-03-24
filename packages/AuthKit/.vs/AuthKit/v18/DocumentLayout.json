@@ -1,0 +1,203 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\packages\\authkit\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.102\\NuGet.Build.Tasks.Pack.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\packages\\authkit\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|solutionrelative:dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\src\\cleanarchtemplate.infrastructure\\persistence\\configurations\\auditlogconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\src\\cleanarchtemplate.infrastructure\\persistence\\configurations\\userroleconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\src\\cleanarchtemplate.domain\\exceptions\\unauthorizedexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\packages\\authkit\\providers\\appleauthprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|solutionrelative:providers\\appleauthprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\src\\cleanarchtemplate.infrastructure\\persistence\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\packages\\authkit\\options\\authkitoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|solutionrelative:options\\authkitoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\src\\cleanarchtemplate.application\\auth\\commands\\adminlogincommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|d:\\templates\\cleanarchtemplate\\packages\\authkit\\providers\\googleauthprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EE733D5-49D3-05F4-982F-506D9DFB5E50}|AuthKit.csproj|solutionrelative:providers\\googleauthprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-24T14:57:12.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NuGet.Build.Tasks.Pack.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\NuGet.Build.Tasks.Pack.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\NuGet.Build.Tasks.Pack.targets",
+              "ViewState": "AgIAABABAAAAAAAAAAAkwBcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-03-24T14:54:08.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "DependencyInjection.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\DependencyInjection.cs",
+              "RelativeToolTip": "DependencyInjection.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T14:37:57.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserRoleConfiguration.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\UserRoleConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\..\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\UserRoleConfiguration.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\UserRoleConfiguration.cs",
+              "RelativeToolTip": "..\\..\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\UserRoleConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T14:30:52.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuditLogConfiguration.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\AuditLogConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\..\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\AuditLogConfiguration.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\AuditLogConfiguration.cs",
+              "RelativeToolTip": "..\\..\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\AuditLogConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T14:30:20.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UnauthorizedException.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Domain\\Exceptions\\UnauthorizedException.cs",
+              "RelativeDocumentMoniker": "..\\..\\src\\CleanArchTemplate.Domain\\Exceptions\\UnauthorizedException.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Domain\\Exceptions\\UnauthorizedException.cs",
+              "RelativeToolTip": "..\\..\\src\\CleanArchTemplate.Domain\\Exceptions\\UnauthorizedException.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA1wAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T14:25:47.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\..\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+              "RelativeToolTip": "..\\..\\src\\CleanArchTemplate.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T14:24:22.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppleAuthProvider.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\Providers\\AppleAuthProvider.cs",
+              "RelativeDocumentMoniker": "Providers\\AppleAuthProvider.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\Providers\\AppleAuthProvider.cs",
+              "RelativeToolTip": "Providers\\AppleAuthProvider.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAWwDMAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T14:24:14.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthKitOptions.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\Options\\AuthKitOptions.cs",
+              "RelativeDocumentMoniker": "Options\\AuthKitOptions.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\Options\\AuthKitOptions.cs",
+              "RelativeToolTip": "Options\\AuthKitOptions.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T14:24:01.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminLoginCommand.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Application\\Auth\\Commands\\AdminLoginCommand.cs",
+              "RelativeDocumentMoniker": "..\\..\\src\\CleanArchTemplate.Application\\Auth\\Commands\\AdminLoginCommand.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\src\\CleanArchTemplate.Application\\Auth\\Commands\\AdminLoginCommand.cs",
+              "RelativeToolTip": "..\\..\\src\\CleanArchTemplate.Application\\Auth\\Commands\\AdminLoginCommand.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:32:41.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GoogleAuthProvider.cs",
+              "DocumentMoniker": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\Providers\\GoogleAuthProvider.cs",
+              "RelativeDocumentMoniker": "Providers\\GoogleAuthProvider.cs",
+              "ToolTip": "D:\\Templates\\CleanArchTemplate\\packages\\AuthKit\\Providers\\GoogleAuthProvider.cs",
+              "RelativeToolTip": "Providers\\GoogleAuthProvider.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAD4vw0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:32:24.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

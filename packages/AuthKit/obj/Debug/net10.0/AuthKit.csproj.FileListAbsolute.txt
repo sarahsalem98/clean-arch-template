@@ -1,0 +1,13 @@
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\AuthKit.csproj.AssemblyReference.cache
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\AuthKit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\AuthKit.AssemblyInfoInputs.cache
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\AuthKit.AssemblyInfo.cs
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\AuthKit.csproj.CoreCompileInputs.cache
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\AuthKit.sourcelink.json
+D:\Templates\CleanArchTemplate\packages\AuthKit\bin\Debug\net10.0\AuthKit.deps.json
+D:\Templates\CleanArchTemplate\packages\AuthKit\bin\Debug\net10.0\AuthKit.dll
+D:\Templates\CleanArchTemplate\packages\AuthKit\bin\Debug\net10.0\AuthKit.pdb
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\AuthKit.dll
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\refint\AuthKit.dll
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\AuthKit.pdb
+D:\Templates\CleanArchTemplate\packages\AuthKit\obj\Debug\net10.0\ref\AuthKit.dll

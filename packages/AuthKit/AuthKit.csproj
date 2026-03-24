@@ -1,0 +1,128 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>AuthKit</RootNamespace>
+
+    <!-- NuGet metadata -->
+    <PackageId>AuthKit</PackageId>
+    <Version>1.0.0</Version>
+    <Title>AuthKit</Title>
+    <Description>Complete authentication and authorization kit for ASP.NET Core. Includes JWT, password hashing, RBAC, and social login (Google, Apple, Facebook).</Description>
+    <Authors>YourName</Authors>
+    <PackageTags>authentication authorization jwt social-login google apple facebook aspnetcore clean-architecture</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/YourName/AuthKit</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/YourName/AuthKit</PackageProjectUrl>
+    <Copyright>Copyright © 2026 YourName</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <!-- ASP.NET Core framework (no extra package needed) -->
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <!-- NuGet dependencies -->
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.0" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.68.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.3.0" />
+  </ItemGroup>
+
+  <!-- ── Domain ─────────────────────────────────────────────── -->
+  <ItemGroup>
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/BaseEntity.cs" Link="Domain/Entities/BaseEntity.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Interfaces/IAuditableEntity.cs" Link="Domain/Interfaces/IAuditableEntity.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/ValueObjects/Address.cs" Link="Domain/ValueObjects/Address.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/User.cs" Link="Domain/Entities/User.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/Role.cs" Link="Domain/Entities/Role.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/Permission.cs" Link="Domain/Entities/Permission.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/UserRole.cs" Link="Domain/Entities/UserRole.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/RolePermission.cs" Link="Domain/Entities/RolePermission.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/RefreshToken.cs" Link="Domain/Entities/RefreshToken.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/DeviceToken.cs" Link="Domain/Entities/DeviceToken.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/SocialLogin.cs" Link="Domain/Entities/SocialLogin.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/PasswordResetToken.cs" Link="Domain/Entities/PasswordResetToken.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Entities/AuditLog.cs" Link="Domain/Entities/AuditLog.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Enums/UserStatus.cs" Link="Domain/Enums/UserStatus.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Enums/Gender.cs" Link="Domain/Enums/Gender.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Enums/DeviceType.cs" Link="Domain/Enums/DeviceType.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Enums/SocialProvider.cs" Link="Domain/Enums/SocialProvider.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Exceptions/UnauthorizedException.cs" Link="Domain/Exceptions/UnauthorizedException.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Exceptions/NotFoundException.cs" Link="Domain/Exceptions/NotFoundException.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Exceptions/ConflictException.cs" Link="Domain/Exceptions/ConflictException.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Exceptions/ForbiddenException.cs" Link="Domain/Exceptions/ForbiddenException.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Exceptions/DomainValidationException.cs" Link="Domain/Exceptions/DomainValidationException.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Exceptions/RateLimitException.cs" Link="Domain/Exceptions/RateLimitException.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Domain/Exceptions/ServiceUnavailableException.cs" Link="Domain/Exceptions/ServiceUnavailableException.cs" />
+  </ItemGroup>
+
+  <!-- ── Application ───────────────────────────────────────── -->
+  <ItemGroup>
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Interfaces/IApplicationDbContext.cs" Link="Application/Interfaces/IApplicationDbContext.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Interfaces/IJwtTokenService.cs" Link="Application/Interfaces/IJwtTokenService.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Interfaces/IPasswordService.cs" Link="Application/Interfaces/IPasswordService.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Interfaces/ICurrentUserService.cs" Link="Application/Interfaces/ICurrentUserService.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Interfaces/ISocialAuthProvider.cs" Link="Application/Interfaces/ISocialAuthProvider.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Interfaces/IEmailService.cs" Link="Application/Interfaces/IEmailService.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Interfaces/IFileStorageService.cs" Link="Application/Interfaces/IFileStorageService.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Models/Result.cs" Link="Application/Models/Result.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Models/ApiResponse.cs" Link="Application/Models/ApiResponse.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Models/ErrorCodes.cs" Link="Application/Models/ErrorCodes.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Models/PaginatedResult.cs" Link="Application/Models/PaginatedResult.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Behaviours/ValidationBehaviour.cs" Link="Application/Behaviours/ValidationBehaviour.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Common/Behaviours/LoggingBehaviour.cs" Link="Application/Behaviours/LoggingBehaviour.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/DTOs/TokenDto.cs" Link="Application/Auth/DTOs/TokenDto.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/DTOs/UserDto.cs" Link="Application/Auth/DTOs/UserDto.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/DTOs/AuthResponseDto.cs" Link="Application/Auth/DTOs/AuthResponseDto.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/LoginCommand.cs" Link="Application/Auth/Commands/LoginCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/RegisterCommand.cs" Link="Application/Auth/Commands/RegisterCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/RefreshTokenCommand.cs" Link="Application/Auth/Commands/RefreshTokenCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/AdminLoginCommand.cs" Link="Application/Auth/Commands/AdminLoginCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/AdminRefreshTokenCommand.cs" Link="Application/Auth/Commands/AdminRefreshTokenCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/SocialLoginCommand.cs" Link="Application/Auth/Commands/SocialLoginCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/LogoutCommand.cs" Link="Application/Auth/Commands/LogoutCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/ChangePasswordCommand.cs" Link="Application/Auth/Commands/ChangePasswordCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/ForgotPasswordCommand.cs" Link="Application/Auth/Commands/ForgotPasswordCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/ResetPasswordCommand.cs" Link="Application/Auth/Commands/ResetPasswordCommand.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Application/Auth/Commands/VerifyEmailCommand.cs" Link="Application/Auth/Commands/VerifyEmailCommand.cs" />
+  </ItemGroup>
+
+  <!-- ── Infrastructure ────────────────────────────────────── -->
+  <ItemGroup>
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Services/JwtTokenService.cs" Link="Infrastructure/Services/JwtTokenService.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Services/PasswordService.cs" Link="Infrastructure/Services/PasswordService.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Services/CurrentUserService.cs" Link="Infrastructure/Services/CurrentUserService.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/UserConfiguration.cs" Link="Infrastructure/Configurations/UserConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/RoleConfiguration.cs" Link="Infrastructure/Configurations/RoleConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/PermissionConfiguration.cs" Link="Infrastructure/Configurations/PermissionConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/UserRoleConfiguration.cs" Link="Infrastructure/Configurations/UserRoleConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/RolePermissionConfiguration.cs" Link="Infrastructure/Configurations/RolePermissionConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/RefreshTokenConfiguration.cs" Link="Infrastructure/Configurations/RefreshTokenConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/DeviceTokenConfiguration.cs" Link="Infrastructure/Configurations/DeviceTokenConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/SocialLoginConfiguration.cs" Link="Infrastructure/Configurations/SocialLoginConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/PasswordResetTokenConfiguration.cs" Link="Infrastructure/Configurations/PasswordResetTokenConfiguration.cs" />
+    <Compile Include="../../src/CleanArchTemplate.Infrastructure/Persistence/Configurations/AuditLogConfiguration.cs" Link="Infrastructure/Configurations/AuditLogConfiguration.cs" />
+  </ItemGroup>
+
+  <!-- ── WebAPI Authorization ──────────────────────────────── -->
+  <ItemGroup>
+    <Compile Include="../../src/CleanArchTemplate.WebAPI/Authorization/PermissionRequirement.cs" Link="Authorization/PermissionRequirement.cs" />
+    <Compile Include="../../src/CleanArchTemplate.WebAPI/Authorization/PermissionHandler.cs" Link="Authorization/PermissionHandler.cs" />
+    <Compile Include="../../src/CleanArchTemplate.WebAPI/Authorization/PortalRequirement.cs" Link="Authorization/PortalRequirement.cs" />
+    <Compile Include="../../src/CleanArchTemplate.WebAPI/Authorization/PortalHandler.cs" Link="Authorization/PortalHandler.cs" />
+  </ItemGroup>
+
+</Project>

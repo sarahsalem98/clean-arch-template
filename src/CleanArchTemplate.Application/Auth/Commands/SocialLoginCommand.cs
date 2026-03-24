@@ -20,22 +20,30 @@ public class SocialLoginCommandHandler : IRequestHandler<SocialLoginCommand, Res
 {
     private readonly IApplicationDbContext _context;
     private readonly IJwtTokenService _jwtService;
+    private readonly IEnumerable<ISocialAuthProvider> _providers;
 
-    public SocialLoginCommandHandler(IApplicationDbContext context, IJwtTokenService jwtService)
+    public SocialLoginCommandHandler(
+        IApplicationDbContext context,
+        IJwtTokenService jwtService,
+        IEnumerable<ISocialAuthProvider> providers)
     {
         _context = context;
         _jwtService = jwtService;
+        _providers = providers;
     }
 
     public async Task<Result<SocialAuthResponseDto>> Handle(SocialLoginCommand request, CancellationToken cancellationToken)
     {
-        // Stub: verify token with provider
-        var (providerUserId, providerEmail, providerName) = await VerifyProviderTokenAsync(
-            request.Provider, request.AccessToken, cancellationToken);
-
         if (!Enum.TryParse<SocialProvider>(request.Provider, true, out var provider))
             throw new Domain.Exceptions.DomainValidationException("provider",
                 "Provider must be 'google', 'facebook', or 'apple'.");
+
+        var authProvider = _providers.FirstOrDefault(p => p.Provider == provider)
+            ?? throw new Domain.Exceptions.DomainValidationException("provider",
+                $"Provider '{request.Provider}' is not configured.");
+
+        var userInfo = await authProvider.VerifyTokenAsync(request.AccessToken, cancellationToken);
+        var (providerUserId, providerEmail, providerName) = (userInfo.ProviderUserId, userInfo.Email, userInfo.Name);
 
         // Check for existing social login
         var existingSocialLogin = await _context.SocialLogins
@@ -158,10 +166,4 @@ public class SocialLoginCommandHandler : IRequestHandler<SocialLoginCommand, Res
         });
     }
 
-    private static Task<(string UserId, string Email, string Name)> VerifyProviderTokenAsync(
-        string provider, string accessToken, CancellationToken cancellationToken)
-    {
-        // Stub: In production, call provider's token verification API
-        return Task.FromResult(($"provider_user_{Guid.NewGuid():N}", "social@example.com", "Social User"));
-    }
 }

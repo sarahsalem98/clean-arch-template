@@ -88,27 +88,19 @@ builder.Services.AddSwaggerGen(options =>
     {
         if (!apiDesc.TryGetMethodInfo(out var method)) return false;
 
-        var controllerVersions = method.DeclaringType?
-            .GetCustomAttributes(true)
-            .OfType<ApiVersionAttribute>()
-            .SelectMany(a => a.Versions)
-            .ToList() ?? [];
-
         var mappedVersions = method
             .GetCustomAttributes(true)
             .OfType<MapToApiVersionAttribute>()
             .SelectMany(a => a.Versions)
             .ToList();
 
-        // Explicitly mapped → only in that version's doc
+        // Explicitly mapped → only in that version's doc, matching group only
         if (mappedVersions.Count > 0)
-            return mappedVersions.Any(v => $"v{v.MajorVersion}" == docName);
+            return mappedVersions.Any(v => $"v{v.MajorVersion}" == docName)
+                && apiDesc.GroupName == docName;
 
-        // Not mapped → only in the lowest version the controller declares
-        var minVersion = controllerVersions.Count > 0
-            ? controllerVersions.Min(v => v.MajorVersion)
-            : 1;
-        return $"v{minVersion}" == docName;
+        // Not mapped → only in v1 doc, v1 group description only
+        return docName == "v1" && apiDesc.GroupName == "v1";
     });
 
     // Include XML comments
