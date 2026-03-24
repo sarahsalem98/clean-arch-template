@@ -1,3 +1,4 @@
+using CleanArchTemplate.Application.Common.Models;
 using CleanArchTemplate.WebAPI.Authorization;
 using CleanArchTemplate.WebAPI.Filters;
 using Microsoft.AspNetCore.Authorization;
@@ -10,8 +11,11 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddWebApi(this IServiceCollection services, IConfiguration configuration)
     {
-        // Controllers with area support
-        services.AddControllers();
+        // Controllers with global filters
+        services.AddControllers(options =>
+        {
+            options.Filters.AddService<RateLimitHeaderFilter>();
+        });
         services.AddEndpointsApiExplorer();
 
         // Authorization handlers
@@ -49,6 +53,20 @@ public static class DependencyInjection
         services.AddRateLimiter(options =>
         {
             options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+            options.OnRejected = async (context, cancellationToken) =>
+            {
+                context.HttpContext.Response.ContentType = "application/json";
+
+                var retryAfterSeconds = 60;
+                if (context.Lease.TryGetMetadata(MetadataName.RetryAfter, out var retryAfter))
+                    retryAfterSeconds = (int)Math.Ceiling(retryAfter.TotalSeconds);
+
+                context.HttpContext.Response.Headers.RetryAfter = retryAfterSeconds.ToString();
+
+                await context.HttpContext.Response.WriteAsJsonAsync(
+                    ApiResponse.RateLimitFail(retryAfterSeconds), cancellationToken);
+            };
 
             // Default sliding-window policy: 100 requests / 60 s
             options.AddSlidingWindowLimiter("default", opt =>

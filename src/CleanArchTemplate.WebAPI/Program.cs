@@ -8,6 +8,7 @@ using CleanArchTemplate.WebAPI.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,6 +52,13 @@ builder.Services.AddSwaggerGen(options =>
         Description = "Clean Architecture template API with JWT authentication, RBAC, and multi-portal support."
     });
 
+    options.SwaggerDoc("v2", new OpenApiInfo
+    {
+        Title = "CleanArchTemplate API",
+        Version = "v2",
+        Description = "V2 — login response includes roles and permissions."
+    });
+
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -74,6 +82,33 @@ builder.Services.AddSwaggerGen(options =>
             },
             Array.Empty<string>()
         }
+    });
+
+    options.DocInclusionPredicate((docName, apiDesc) =>
+    {
+        if (!apiDesc.TryGetMethodInfo(out var method)) return false;
+
+        var controllerVersions = method.DeclaringType?
+            .GetCustomAttributes(true)
+            .OfType<ApiVersionAttribute>()
+            .SelectMany(a => a.Versions)
+            .ToList() ?? [];
+
+        var mappedVersions = method
+            .GetCustomAttributes(true)
+            .OfType<MapToApiVersionAttribute>()
+            .SelectMany(a => a.Versions)
+            .ToList();
+
+        // Explicitly mapped → only in that version's doc
+        if (mappedVersions.Count > 0)
+            return mappedVersions.Any(v => $"v{v.MajorVersion}" == docName);
+
+        // Not mapped → only in the lowest version the controller declares
+        var minVersion = controllerVersions.Count > 0
+            ? controllerVersions.Min(v => v.MajorVersion)
+            : 1;
+        return $"v{minVersion}" == docName;
     });
 
     // Include XML comments
@@ -111,6 +146,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "CleanArchTemplate API v1");
+        options.SwaggerEndpoint("/swagger/v2/swagger.json", "CleanArchTemplate API v2");
         options.RoutePrefix = "swagger";
     });
 }

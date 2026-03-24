@@ -39,7 +39,7 @@ public class UsersController : ControllerBase
     [ProducesResponseType(typeof(ApiResponse<object?>), StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetUserById(Guid userId, CancellationToken ct)
     {
-        var result = await _mediator.Send(new GetUserByIdQuery { UserId = userId }, ct);
+        var result = await _mediator.Send(new GetUserByIdQuery ( userId ), ct);
         if (!result.IsSuccess)
             return StatusCode(result.HttpStatusCode, ApiResponse.Fail(result.ErrorCode!, result.ErrorMessage!));
 

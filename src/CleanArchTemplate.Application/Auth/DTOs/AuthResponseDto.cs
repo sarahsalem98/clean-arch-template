@@ -6,6 +6,14 @@ public class AuthResponseDto
     public TokenDto Tokens { get; set; } = default!;
 }
 
+public class AuthResponseV2Dto
+{
+    public UserDto User { get; set; } = default!;
+    public TokenDto Tokens { get; set; } = default!;
+    public List<string> Roles { get; set; } = [];
+    public List<string> Permissions { get; set; } = [];
+}
+
 public class SocialAuthResponseDto
 {
     public UserDto User { get; set; } = default!;

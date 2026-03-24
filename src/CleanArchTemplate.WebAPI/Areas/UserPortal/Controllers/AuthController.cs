@@ -11,6 +11,7 @@ namespace CleanArchTemplate.WebAPI.Areas.UserPortal.Controllers;
 [Area("UserPortal")]
 [Route("api/v{version:apiVersion}/user/auth")]
 [ApiVersion("1.0")]
+[ApiVersion("2.0")]
 public class AuthController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -33,9 +34,24 @@ public class AuthController : ControllerBase
 
     /// <summary>Authenticate with email and password.</summary>
     [HttpPost("login")]
+    [MapToApiVersion("1.0")]
     [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiResponse<object?>), StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> Login([FromBody] LoginCommand command, CancellationToken ct)
+    {
+        var result = await _mediator.Send(command, ct);
+        if (!result.IsSuccess)
+            return StatusCode(result.HttpStatusCode, ApiResponse.Fail(result.ErrorCode!, result.ErrorMessage!));
+
+        return Ok(ApiResponse.Ok(result.Value, "Login successful."));
+    }
+
+    /// <summary>Authenticate with email and password. Returns roles and permissions.</summary>
+    [HttpPost("login")]
+    [MapToApiVersion("2.0")]
+    [ProducesResponseType(typeof(ApiResponse<object>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ApiResponse<object?>), StatusCodes.Status401Unauthorized)]
+    public async Task<IActionResult> LoginV2([FromBody] LoginV2Command command, CancellationToken ct)
     {
         var result = await _mediator.Send(command, ct);
         if (!result.IsSuccess)

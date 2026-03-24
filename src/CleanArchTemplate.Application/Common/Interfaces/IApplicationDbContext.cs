@@ -1,6 +1,7 @@
 using CleanArchTemplate.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace CleanArchTemplate.Application.Common.Interfaces;
 
 public interface IApplicationDbContext

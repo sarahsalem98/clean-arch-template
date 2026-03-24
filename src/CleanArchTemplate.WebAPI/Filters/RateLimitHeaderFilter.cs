@@ -9,15 +9,9 @@ public class RateLimitHeaderFilter : IActionFilter
 
     public void OnActionExecuted(ActionExecutedContext context)
     {
-        var httpContext = context.HttpContext;
-
-        // Expose rate-limit metadata set by ASP.NET Core's RateLimiter
-        if (httpContext.Features.Get<IRateLimiterStatisticsFeature>() is { } stats)
-        {
-            httpContext.Response.Headers["X-RateLimit-Limit"] =
-                (stats.CurrentAvailablePermits + (stats.TotalSuccessfulLeasesCount > 0 ? 1 : 0)).ToString();
-            httpContext.Response.Headers["X-RateLimit-Remaining"] =
-                stats.CurrentAvailablePermits.ToString();
-        }
+        var endpoint = context.HttpContext.GetEndpoint();
+        var rateLimitAttr = endpoint?.Metadata.GetMetadata<EnableRateLimitingAttribute>();
+        if (rateLimitAttr is not null)
+            context.HttpContext.Response.Headers["X-RateLimit-Policy"] = rateLimitAttr.PolicyName;
     }
 }
